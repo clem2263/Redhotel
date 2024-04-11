@@ -6,17 +6,17 @@ namespace DomainModel
     [Table("Rooms")]
     public class Room
     {
-        public int RoomID { get; set; }
+        public int? RoomID { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Category { get; set; }
+        public string? Category { get; set; }
 
         [Required]
-        public int BedsNumber { get; set; }
+        public int? BedsNumber { get; set; }
 
         [Required]
-        public Boolean HaveBath { get; set; }
+        public Boolean? HaveBath { get; set; }
 
         public Hotel? Hotel { get; set; }
 

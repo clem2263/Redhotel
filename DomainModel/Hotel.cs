@@ -6,38 +6,43 @@ namespace DomainModel
     [Table("Hotels")]
     public class Hotel
     {
-        public int HotelID { get; set; }
+        public int? HotelID { get; set; }
 
         [Required]
         [StringLength(30)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
-        public int Stars { get; set; }
+        [Required]
+        public int? Stars { get; set; }
 
         [Required]
         [StringLength(30)]
-        public string City { get; set; }
+        public string? City { get; set; }
 
         [Required]
         [StringLength(30)]
-        public string Country { get; set; }
+        public string? Country { get; set; }
 
         [Required]
-        [StringLength(30)]
-        public string PostalCode { get; set; }
+        [StringLength(15)]
+        public string? PostalCode { get; set; }
 
         [Required]
-        [StringLength(30)]
-        public string Address { get; set; }
+        [StringLength(80)]
+        public string? Address { get; set; }
 
-        public Boolean HaveSwimmingPool { get; set; }
+        [Required]
+        public Boolean? HaveSwimmingPool { get; set; }
 
-        public Boolean HaveSpa { get; set; }
+        [Required]
+        public Boolean? HaveSpa { get; set; }
 
-        public Boolean HaveGolf { get; set; }
+        [Required]
+        public Boolean? HaveGolf { get; set; }
 
-        public Boolean HaveConferenceRoom { get; set; }
+        [Required]
+        public Boolean? HaveConferenceRoom { get; set; }
 
-        public ICollection<Room> Rooms { get; set; }
+        public ICollection<Room>? Rooms { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace DomainModel
     [Table("reservations")]
     public class Reservation
     {
-        public int ReservationID { get; set; }
+        public int? ReservationID { get; set; }
 
         public Hotel? Hotel { get; set; }
 
@@ -21,6 +21,6 @@ namespace DomainModel
 
         public int? RoomID { get; set; }
 
-        public float price { get; set; }
+        public float? Price { get; set; }
     }
 }
