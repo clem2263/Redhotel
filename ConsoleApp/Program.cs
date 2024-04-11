@@ -14,6 +14,7 @@ namespace ConsoleApp
         {
             using(var context = new RedHotelContext())
             {
+                context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();
             }
         }
