@@ -1,6 +1,7 @@
 using Dal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
+using Serilog;
 
 namespace RedHotelAPI
 {

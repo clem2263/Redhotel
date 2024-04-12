@@ -11,6 +11,7 @@ namespace RedHotelAPI.Controllers
     public class CustomerController : Controller
     {
         private readonly RedHotelContext context;
+
         public CustomerController(RedHotelContext context)
         {
             this.context = context;
@@ -19,69 +20,107 @@ namespace RedHotelAPI.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            return Ok(this.context.Customers.ToList());
+            try
+            {
+                if (this.context.Customers == null)
+                {
+                    return NotFound();
+                }
+                return Ok(this.context.Customers.ToList());
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCustomerById(int id)
         {
-            var customer = await context.Customers.FindAsync(id);
-
-            if (customer == null)
+            try
             {
-                return NotFound();
-            }
+                var customer = await context.Customers.FindAsync(id);
 
-            return Ok(customer);
+                if (customer == null)
+                {
+                    return NotFound();
+                }
+                return Ok(customer);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateCustomer([FromBody] Customer customer)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                context.Customers.Add(customer);
+                await context.SaveChangesAsync();
+
+                return CreatedAtRoute("GetCustomer", new { id = customer.CustomerID }, customer);
             }
-
-            context.Customers.Add(customer);
-            await context.SaveChangesAsync();
-
-            return CreatedAtRoute("GetCustomer", new { id = customer.CustomerID }, customer);
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCustomer(int id, [FromBody] Customer customer)
         {
-            if (id != customer.CustomerID)
+            try
             {
-                return BadRequest();
-            }
+                if (id != customer.CustomerID)
+                {
+                    return BadRequest();
+                }
 
-            if (!ModelState.IsValid)
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                context.Entry(customer).State = EntityState.Modified;
+                await context.SaveChangesAsync();
+
+                return NoContent();
+            }
+            catch (Exception e)
             {
-                return BadRequest(ModelState);
+                return StatusCode(500, e.Message);
             }
-
-            context.Entry(customer).State = EntityState.Modified;
-            await context.SaveChangesAsync();
-
-            return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCustomer(int id)
         {
-            var customer = await context.Customers.FindAsync(id);
-
-            if (customer == null)
+            try
             {
-                return NotFound();
+                var customer = await context.Customers.FindAsync(id);
+
+                if (customer == null)
+                {
+                    return NotFound();
+                }
+
+                context.Customers.Remove(customer);
+                await context.SaveChangesAsync();
+
+                return NoContent();
             }
-
-            context.Customers.Remove(customer);
-            await context.SaveChangesAsync();
-
-            return NoContent();
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
         }
     }
 }

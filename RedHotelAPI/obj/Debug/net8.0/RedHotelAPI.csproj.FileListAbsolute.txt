@@ -58,3 +58,13 @@ C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\R
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\obj\Debug\net8.0\RedHotelAPI.pdb
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\obj\Debug\net8.0\RedHotelAPI.genruntimeconfig.cache
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\obj\Debug\net8.0\ref\RedHotelAPI.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\bin\Debug\net8.0\Serilog.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\RedHotelAPI\bin\Debug\net8.0\Serilog.Sinks.File.dll
