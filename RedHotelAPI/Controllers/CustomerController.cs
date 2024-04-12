@@ -76,14 +76,17 @@ namespace RedHotelAPI.Controllers
             }
         }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateCustomer([FromBody] Customer customer)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCustomer(int id, [FromBody] Customer customer)
         {
             try
             {
-                var customers = await context.Customers.ToListAsync();
+                if (id != customer.CustomerID)
+                {
+                    return BadRequest();
+                }
 
-                if (customers == null)
+                if (this.context.Customers.Find(id) == null)
                 {
                     return NotFound();
                 }

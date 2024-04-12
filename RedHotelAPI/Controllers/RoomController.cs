@@ -79,10 +79,14 @@ namespace RedHotelAPI.Controllers
         {
             try
             {
-                var rooms = await context.Rooms.ToListAsync();
-                if (rooms == null)
+                if (id != room.RoomID)
                 {
                     return BadRequest();
+                }
+
+                if (this.context.Rooms.Find(id) == null)
+                {
+                    return NotFound();
                 }
 
                 if (!ModelState.IsValid)

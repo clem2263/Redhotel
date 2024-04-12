@@ -75,14 +75,17 @@ namespace RedHotelAPI.Controllers
             }
         }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateReservation([FromBody] Reservation reservation)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateReservation(int id, [FromBody] Reservation reservation)
         {
             try
             {
-                var reservations = await context.Reservations.ToListAsync();
+                if (id != reservation.ReservationID)
+                {
+                    return BadRequest();
+                }
 
-                if (reservations == null)
+                if (this.context.Reservations.Find(id) == null)
                 {
                     return NotFound();
                 }

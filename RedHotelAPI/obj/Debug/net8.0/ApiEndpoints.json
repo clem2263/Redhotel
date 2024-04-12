@@ -27,22 +27,6 @@
   },
   {
     "ContainingType": "RedHotelAPI.Controllers.CustomerController",
-    "Method": "UpdateCustomer",
-    "RelativePath": "Customer",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "customer",
-        "Type": "DomainModel.Customer",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "RedHotelAPI.Controllers.CustomerController",
     "Method": "GetCustomerById",
     "RelativePath": "Customer/{id}",
     "HttpMethod": "GET",
@@ -52,6 +36,27 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedHotelAPI.Controllers.CustomerController",
+    "Method": "UpdateCustomer",
+    "RelativePath": "Customer/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "customer",
+        "Type": "DomainModel.Customer",
         "IsRequired": true
       }
     ],
