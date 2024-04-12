@@ -18,10 +18,12 @@ namespace RedHotelAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAllAsync()
         {
             try
             {
+                var customers = await context.Customers.ToListAsync();
+
                 if (this.context.Customers == null)
                 {
                     return NotFound();
@@ -79,7 +81,9 @@ namespace RedHotelAPI.Controllers
         {
             try
             {
-                if (context.Customers.FindAsync(customer.CustomerID) == null)
+                var customers = await context.Customers.ToListAsync();
+
+                if (customers == null)
                 {
                     return NotFound();
                 }
