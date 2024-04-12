@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Redhotel\\DomainModel\\DomainModel.csproj": {}
+    "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Nouveau dossier\\Redhotel\\DomainModel\\DomainModel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Redhotel\\DomainModel\\DomainModel.csproj": {
+    "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Nouveau dossier\\Redhotel\\DomainModel\\DomainModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Redhotel\\DomainModel\\DomainModel.csproj",
+        "projectUniqueName": "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Nouveau dossier\\Redhotel\\DomainModel\\DomainModel.csproj",
         "projectName": "DomainModel",
-        "projectPath": "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Redhotel\\DomainModel\\DomainModel.csproj",
+        "projectPath": "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Nouveau dossier\\Redhotel\\DomainModel\\DomainModel.csproj",
         "packagesPath": "C:\\Users\\cleme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Redhotel\\DomainModel\\obj\\",
+        "outputPath": "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Nouveau dossier\\Redhotel\\DomainModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cleme\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j8j0CUhV6vB0tgUFpwBQU25GusTyb3QxDnVjmx2LIvhCz3es465tjjaig/8BT4PZkCBoHNdfwQOa1l6+Q7ZOqA==",
+  "dgSpecHash": "RHMPxP58YFxPK5P7dPuMXtoN78pc4LF5NHsnAMOfpTBLbnapPIOYZ6TAIxYaiPuPrYNttMTtYjAxU6htWgfa9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Redhotel\\ConsoleApp\\ConsoleApp.csproj",
+  "projectFilePath": "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Nouveau dossier\\Redhotel\\ConsoleApp\\ConsoleApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cleme\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\cleme\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",

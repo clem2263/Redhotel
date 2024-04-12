@@ -22,6 +22,7 @@ namespace RedHotelAPI.Controllers
             try
             {
                 var rooms = await context.Rooms.ToListAsync();
+
                 if (this.context.Rooms == null)
                 {
                     return NotFound();

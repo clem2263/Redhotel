@@ -28,7 +28,8 @@ namespace RedHotelAPI.Controllers
                 {
                     return NotFound();
                 }
-                return Ok(this.context.Customers.ToList());
+
+                return Ok(customers);
             }
             catch (Exception e)
             {

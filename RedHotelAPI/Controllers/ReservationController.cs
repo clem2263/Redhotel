@@ -27,7 +27,7 @@ namespace RedHotelAPI.Controllers
                 {
                     return NotFound();
                 }
-                return Ok(this.context.Customers.ToList());
+                return Ok(reservations);
             }
             catch (Exception e)
             {

@@ -1,6 +1,7 @@
-﻿using Dal;
+﻿using Microsoft.AspNetCore.Mvc;
 using DomainModel;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Dal;
 
 namespace RedHotelAPI.Controllers
 {
@@ -15,42 +16,45 @@ namespace RedHotelAPI.Controllers
             this.context = context;
         }
 
-        [HttpGet] // Accéder à l'hôtel
-        public IActionResult GetAll()
-        {
-            return Ok(this.context.Hotels.ToList());
-        }
-
-        [HttpGet("{id}")] // Lister un hôtel
-
-        public async Task<IActionResult> GetHotelById(int id)
+        [HttpGet]
+        public async Task<IActionResult> GetAllHotels()
         {
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
+                var hotels = await context.Hotels.ToListAsync();
 
-                var hotel = await context.Hotels.FindAsync(id);
-
-                if (hotel == null)
+                if (this.context.Hotels == null)
                 {
-                    Console.WriteLine($"[ HotelController ] - GetHotelById - the specified hotel was not found in the database, id : {id}");
                     return NotFound();
                 }
 
-                return Ok(hotel);
+                return Ok(hotels);
             }
             catch (Exception e)
             {
-                Console.WriteLine($"[ HotelController ] - GetAll - an error has occurred while retrieving all hotels : {e.Message}");
                 return StatusCode(500, e.Message);
             }
         }
 
-        [HttpPost] // Créer un hôtel
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetHotelById(int id)
+        {
+            try
+            {
+                var hotel = await context.Hotels.FindAsync(id);
+                if (hotel == null)
+                {
+                    return NotFound();
+                }
+                return Ok(hotel);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
 
+        [HttpPost]
         public async Task<IActionResult> CreateHotel([FromBody] Hotel hotel)
         {
             try
@@ -63,59 +67,50 @@ namespace RedHotelAPI.Controllers
                 context.Hotels.Add(hotel);
                 await context.SaveChangesAsync();
 
-                return CreatedAtRoute("GetHotel", new { id = hotel.HotelID }, hotel);
+                return Ok(context.Hotels.FindAsync(hotel.HotelID));
             }
             catch (Exception e)
             {
-                Console.WriteLine($"[ HotelController ] - GetAll - an error has occurred while retrieving all hotels : {e.Message}");
                 return StatusCode(500, e.Message);
             }
         }
 
-        [HttpPut("{id}")] // Modifier un hôtel 
-
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateHotel(int id, [FromBody] Hotel hotel)
         {
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-
                 if (id != hotel.HotelID)
                 {
                     return BadRequest();
                 }
 
+                if (this.context.Hotels.Find(id) == null)
+                {
+                    return NotFound();
+                }
+
                 if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
                 }
 
-                context.Entry(hotel).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                context.Entry(hotel).State = EntityState.Modified;
                 await context.SaveChangesAsync();
 
-                return NoContent();
+                return Ok(context.Hotels.FindAsync(hotel.HotelID));
             }
             catch (Exception e)
             {
-                Console.WriteLine($"[ HotelController ] - GetAll - an error has occurred while retrieving all hotels : {e.Message}");
                 return StatusCode(500, e.Message);
             }
         }
 
-        [HttpDelete("{id}")] // Supprime un hôtel
-
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHotel(int id)
         {
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-
                 var hotel = await context.Hotels.FindAsync(id);
 
                 if (hotel == null)
@@ -130,10 +125,8 @@ namespace RedHotelAPI.Controllers
             }
             catch (Exception e)
             {
-                Console.WriteLine($"[ CustomerController ] - GetAll - an error has occurred while retrieving all hotels : {e.Message}");
                 return StatusCode(500, e.Message);
             }
         }
-
     }
 }

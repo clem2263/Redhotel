@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IyE7kXoqvGqnjC8WNhFUnBbe7QI46vHRMzSuVbVmemG3mC4Hc/byGjamRiB4ZZbFf7io4BLjOuBnwpS7GJtHEw==",
+  "dgSpecHash": "Rt6qwlA+ttNOG5/zD7yD41opABHhTKEgNEMhgCwferGr9Bf5OFFEamhA4LCNgH1kGGjik9u7GQVUxVbCtB2ukQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Redhotel\\RedHotelAPI\\RedHotelAPI.csproj",
+  "projectFilePath": "C:\\Users\\cleme\\Documents\\ETUDES_SCOLAIRES\\3eme_annee\\.NET\\Corrections\\Nouveau dossier\\Redhotel\\RedHotelAPI\\RedHotelAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cleme\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\cleme\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
