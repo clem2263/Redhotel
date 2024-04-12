@@ -76,7 +76,7 @@ namespace RedHotelAPI.Controllers
             }
         }
 
-        [HttpPut)]
+        [HttpPut]
         public async Task<IActionResult> UpdateCustomer([FromBody] Customer customer)
         {
             try
