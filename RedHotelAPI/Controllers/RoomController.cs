@@ -22,6 +22,10 @@ namespace RedHotelAPI.Controllers
             try
             {
                 var rooms = await context.Rooms.ToListAsync();
+                if (this.context.Rooms == null)
+                {
+                    return NotFound();
+                }
                 return Ok(rooms);
             }
             catch (Exception e)
@@ -62,7 +66,7 @@ namespace RedHotelAPI.Controllers
                 context.Rooms.Add(room);
                 await context.SaveChangesAsync();
 
-                return CreatedAtRoute("GetRoom", new { id = room.RoomID }, room);
+                return Ok(context.Rooms.FindAsync(room.RoomID));
             }
             catch (Exception e)
             {
@@ -75,7 +79,8 @@ namespace RedHotelAPI.Controllers
         {
             try
             {
-                if (id != room.RoomID)
+                var rooms = await context.Rooms.ToListAsync();
+                if (rooms == null)
                 {
                     return BadRequest();
                 }
@@ -88,7 +93,7 @@ namespace RedHotelAPI.Controllers
                 context.Entry(room).State = EntityState.Modified;
                 await context.SaveChangesAsync();
 
-                return NoContent();
+                return Ok(context.Rooms.FindAsync(room.RoomID));
             }
             catch (Exception e)
             {

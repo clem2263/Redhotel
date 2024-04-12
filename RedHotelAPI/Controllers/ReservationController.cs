@@ -21,7 +21,9 @@ namespace RedHotelAPI.Controllers
         {
             try
             {
-                if(this.context.Reservations == null)
+                var reservations = await context.Reservations.ToListAsync();
+
+                if(reservations == null)
                 {
                     return NotFound();
                 }
@@ -78,7 +80,9 @@ namespace RedHotelAPI.Controllers
         {
             try
             {
-                if (context.Reservations.FindAsync(reservation.ReservationID) == null)
+                var reservations = await context.Reservations.ToListAsync();
+
+                if (reservations == null)
                 {
                     return NotFound();
                 }
