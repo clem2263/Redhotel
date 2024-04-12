@@ -13,3 +13,19 @@ C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau do
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\RedHotel\Dal\obj\Debug\net8.0\refint\Dal.dll
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\RedHotel\Dal\obj\Debug\net8.0\Dal.pdb
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\RedHotel\Dal\obj\Debug\net8.0\ref\Dal.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\bin\Debug\net8.0\Dal.deps.json
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\bin\Debug\net8.0\Dal.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\bin\Debug\net8.0\Dal.pdb
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\bin\Debug\net8.0\DomainModel.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\bin\Debug\net8.0\DomainModel.pdb
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\Dal.csproj.AssemblyReference.cache
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\Dal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\Dal.AssemblyInfoInputs.cache
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\Dal.AssemblyInfo.cs
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\Dal.csproj.CoreCompileInputs.cache
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\Dal.sourcelink.json
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\Dal.csproj.Up2Date
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\Dal.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\refint\Dal.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\Dal.pdb
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\ref\Dal.dll
