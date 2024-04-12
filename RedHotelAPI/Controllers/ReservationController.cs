@@ -21,8 +21,11 @@ namespace RedHotelAPI.Controllers
         {
             try
             {
-                var reservations = await context.Reservations.Include(r => r.Customer).Include(r => r.Room).Include(r => r.Hotel).ToListAsync();
-                return Ok(reservations);
+                if(this.context.Reservations == null)
+                {
+                    return NotFound();
+                }
+                return Ok(this.context.Customers.ToList());
             }
             catch (Exception e)
             {
@@ -35,7 +38,7 @@ namespace RedHotelAPI.Controllers
         {
             try
             {
-                var reservation = await context.Reservations.Include(r => r.Customer).Include(r => r.Room).Include(r => r.Hotel).FirstOrDefaultAsync(r => r.ReservationID == id);
+                var reservation = await context.Reservations.FindAsync(id);
 
                 if (reservation == null)
                 {
@@ -62,7 +65,7 @@ namespace RedHotelAPI.Controllers
                 context.Reservations.Add(reservation);
                 await context.SaveChangesAsync();
 
-                return CreatedAtRoute("GetReservation", new { id = reservation.ReservationID }, reservation);
+                return Ok(context.Reservations.FindAsync(reservation.ReservationID));
             }
             catch (Exception e)
             {
@@ -70,14 +73,14 @@ namespace RedHotelAPI.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateReservation(int id, [FromBody] Reservation reservation)
+        [HttpPut]
+        public async Task<IActionResult> UpdateReservation([FromBody] Reservation reservation)
         {
             try
             {
-                if (id != reservation.ReservationID)
+                if (context.Reservations.FindAsync(reservation.ReservationID) == null)
                 {
-                    return BadRequest();
+                    return NotFound();
                 }
 
                 if (!ModelState.IsValid)
@@ -88,7 +91,7 @@ namespace RedHotelAPI.Controllers
                 context.Entry(reservation).State = EntityState.Modified;
                 await context.SaveChangesAsync();
 
-                return NoContent();
+                return Ok(context.Reservations.FindAsync(reservation.ReservationID));
             }
             catch (Exception e)
             {

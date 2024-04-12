@@ -66,7 +66,7 @@ namespace RedHotelAPI.Controllers
                 context.Customers.Add(customer);
                 await context.SaveChangesAsync();
 
-                return CreatedAtRoute("GetCustomer", new { id = customer.CustomerID }, customer);
+                return Ok(context.Customers.FindAsync(customer.CustomerID));
             }
             catch (Exception e)
             {
@@ -74,14 +74,14 @@ namespace RedHotelAPI.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCustomer(int id, [FromBody] Customer customer)
+        [HttpPut)]
+        public async Task<IActionResult> UpdateCustomer([FromBody] Customer customer)
         {
             try
             {
-                if (id != customer.CustomerID)
+                if (context.Customers.FindAsync(customer.CustomerID) == null)
                 {
-                    return BadRequest();
+                    return NotFound();
                 }
 
                 if (!ModelState.IsValid)
@@ -92,7 +92,7 @@ namespace RedHotelAPI.Controllers
                 context.Entry(customer).State = EntityState.Modified;
                 await context.SaveChangesAsync();
 
-                return NoContent();
+                return Ok(context.Customers.FindAsync(customer.CustomerID));
             }
             catch (Exception e)
             {
