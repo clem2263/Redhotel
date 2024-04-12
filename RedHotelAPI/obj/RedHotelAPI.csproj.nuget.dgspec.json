@@ -192,10 +192,6 @@
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[8.0.1, )"
-            },
-            "Serilog.Sinks.Console": {
-              "target": "Package",
-              "version": "[5.0.1, )"
             }
           },
           "imports": [

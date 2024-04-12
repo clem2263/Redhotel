@@ -1,34 +1,32 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Dal;
 using DomainModel;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Dal;
 
 namespace RedHotelAPI.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class CustomerController : Controller
+    public class RoomController : Controller
     {
         private readonly RedHotelContext context;
 
-        public CustomerController(RedHotelContext context)
+        public RoomController(RedHotelContext context)
         {
             this.context = context;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        public async Task<IActionResult> GetAllRooms()
         {
             try
             {
-                var customers = await context.Customers.ToListAsync();
-
-                if (this.context.Customers == null)
+                var rooms = await context.Rooms.ToListAsync();
+                if (this.context.Rooms == null)
                 {
                     return NotFound();
                 }
-                return Ok(this.context.Customers.ToList());
+                return Ok(rooms);
             }
             catch (Exception e)
             {
@@ -37,17 +35,17 @@ namespace RedHotelAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCustomerById(int id)
+        public async Task<IActionResult> GetRoomById(int id)
         {
             try
             {
-                var customer = await context.Customers.FindAsync(id);
+                var room = await context.Rooms.FindAsync(id);
 
-                if (customer == null)
+                if (room == null)
                 {
                     return NotFound();
                 }
-                return Ok(customer);
+                return Ok(room);
             }
             catch (Exception e)
             {
@@ -56,7 +54,7 @@ namespace RedHotelAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCustomer([FromBody] Customer customer)
+        public async Task<IActionResult> CreateRoom([FromBody] Room room)
         {
             try
             {
@@ -65,10 +63,10 @@ namespace RedHotelAPI.Controllers
                     return BadRequest(ModelState);
                 }
 
-                context.Customers.Add(customer);
+                context.Rooms.Add(room);
                 await context.SaveChangesAsync();
 
-                return Ok(context.Customers.FindAsync(customer.CustomerID));
+                return Ok(context.Rooms.FindAsync(room.RoomID));
             }
             catch (Exception e)
             {
@@ -77,16 +75,16 @@ namespace RedHotelAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCustomer(int id, [FromBody] Customer customer)
+        public async Task<IActionResult> UpdateRoom(int id, [FromBody] Room room)
         {
             try
             {
-                if (id != customer.CustomerID)
+                if (id != room.RoomID)
                 {
                     return BadRequest();
                 }
 
-                if (this.context.Customers.Find(id) == null)
+                if (this.context.Rooms.Find(id) == null)
                 {
                     return NotFound();
                 }
@@ -96,10 +94,10 @@ namespace RedHotelAPI.Controllers
                     return BadRequest(ModelState);
                 }
 
-                context.Entry(customer).State = EntityState.Modified;
+                context.Entry(room).State = EntityState.Modified;
                 await context.SaveChangesAsync();
 
-                return Ok(context.Customers.FindAsync(customer.CustomerID));
+                return Ok(context.Rooms.FindAsync(room.RoomID));
             }
             catch (Exception e)
             {
@@ -108,18 +106,18 @@ namespace RedHotelAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCustomer(int id)
+        public async Task<IActionResult> DeleteRoom(int id)
         {
             try
             {
-                var customer = await context.Customers.FindAsync(id);
+                var room = await context.Rooms.FindAsync(id);
 
-                if (customer == null)
+                if (room == null)
                 {
                     return NotFound();
                 }
 
-                context.Customers.Remove(customer);
+                context.Rooms.Remove(room);
                 await context.SaveChangesAsync();
 
                 return NoContent();

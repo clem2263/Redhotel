@@ -1,30 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Dal;
 using DomainModel;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Dal;
 
 namespace RedHotelAPI.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class CustomerController : Controller
+    public class ReservationController : Controller
     {
         private readonly RedHotelContext context;
 
-        public CustomerController(RedHotelContext context)
+        public ReservationController(RedHotelContext context)
         {
             this.context = context;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        public async Task<IActionResult> GetAllReservations()
         {
             try
             {
-                var customers = await context.Customers.ToListAsync();
+                var reservations = await context.Reservations.ToListAsync();
 
-                if (this.context.Customers == null)
+                if(reservations == null)
                 {
                     return NotFound();
                 }
@@ -37,17 +36,17 @@ namespace RedHotelAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCustomerById(int id)
+        public async Task<IActionResult> GetReservationById(int id)
         {
             try
             {
-                var customer = await context.Customers.FindAsync(id);
+                var reservation = await context.Reservations.FindAsync(id);
 
-                if (customer == null)
+                if (reservation == null)
                 {
                     return NotFound();
                 }
-                return Ok(customer);
+                return Ok(reservation);
             }
             catch (Exception e)
             {
@@ -56,7 +55,7 @@ namespace RedHotelAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCustomer([FromBody] Customer customer)
+        public async Task<IActionResult> CreateReservation([FromBody] Reservation reservation)
         {
             try
             {
@@ -65,10 +64,10 @@ namespace RedHotelAPI.Controllers
                     return BadRequest(ModelState);
                 }
 
-                context.Customers.Add(customer);
+                context.Reservations.Add(reservation);
                 await context.SaveChangesAsync();
 
-                return Ok(context.Customers.FindAsync(customer.CustomerID));
+                return Ok(context.Reservations.FindAsync(reservation.ReservationID));
             }
             catch (Exception e)
             {
@@ -77,16 +76,16 @@ namespace RedHotelAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCustomer(int id, [FromBody] Customer customer)
+        public async Task<IActionResult> UpdateReservation(int id, [FromBody] Reservation reservation)
         {
             try
             {
-                if (id != customer.CustomerID)
+                if (id != reservation.ReservationID)
                 {
                     return BadRequest();
                 }
 
-                if (this.context.Customers.Find(id) == null)
+                if (this.context.Reservations.Find(id) == null)
                 {
                     return NotFound();
                 }
@@ -96,10 +95,10 @@ namespace RedHotelAPI.Controllers
                     return BadRequest(ModelState);
                 }
 
-                context.Entry(customer).State = EntityState.Modified;
+                context.Entry(reservation).State = EntityState.Modified;
                 await context.SaveChangesAsync();
 
-                return Ok(context.Customers.FindAsync(customer.CustomerID));
+                return Ok(context.Reservations.FindAsync(reservation.ReservationID));
             }
             catch (Exception e)
             {
@@ -108,18 +107,18 @@ namespace RedHotelAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCustomer(int id)
+        public async Task<IActionResult> DeleteReservation(int id)
         {
             try
             {
-                var customer = await context.Customers.FindAsync(id);
+                var reservation = await context.Reservations.FindAsync(id);
 
-                if (customer == null)
+                if (reservation == null)
                 {
                     return NotFound();
                 }
 
-                context.Customers.Remove(customer);
+                context.Reservations.Remove(reservation);
                 await context.SaveChangesAsync();
 
                 return NoContent();
