@@ -42,7 +42,7 @@ namespace RedHotelAPI.Controllers
         {
             try
             {
-                var customer = await context.Customers.FindAsync(id);
+                var customer = await context.Customers.Include(c => c.Reservations).FirstOrDefaultAsync(c => c.CustomerID == id);
 
                 if (customer == null)
                 {
@@ -85,11 +85,6 @@ namespace RedHotelAPI.Controllers
                 if (id != customer.CustomerID)
                 {
                     return BadRequest();
-                }
-
-                if (this.context.Customers.Find(id) == null)
-                {
-                    return NotFound();
                 }
 
                 if (!ModelState.IsValid)

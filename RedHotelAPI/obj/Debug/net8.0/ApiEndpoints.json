@@ -79,6 +79,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "RedHotelAPI.Controllers.HotelController",
+    "Method": "GetAllHotels",
+    "RelativePath": "Hotel",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedHotelAPI.Controllers.HotelController",
+    "Method": "CreateHotel",
+    "RelativePath": "Hotel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "hotel",
+        "Type": "DomainModel.Hotel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedHotelAPI.Controllers.HotelController",
+    "Method": "GetHotelById",
+    "RelativePath": "Hotel/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedHotelAPI.Controllers.HotelController",
+    "Method": "UpdateHotel",
+    "RelativePath": "Hotel/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "hotel",
+        "Type": "DomainModel.Hotel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedHotelAPI.Controllers.HotelController",
+    "Method": "DeleteHotel",
+    "RelativePath": "Hotel/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "RedHotelAPI.Controllers.ReservationController",
     "Method": "GetAllReservations",
     "RelativePath": "Reservation",
@@ -106,22 +185,6 @@
   },
   {
     "ContainingType": "RedHotelAPI.Controllers.ReservationController",
-    "Method": "UpdateReservation",
-    "RelativePath": "Reservation",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "reservation",
-        "Type": "DomainModel.Reservation",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "RedHotelAPI.Controllers.ReservationController",
     "Method": "GetReservationById",
     "RelativePath": "Reservation/{id}",
     "HttpMethod": "GET",
@@ -131,6 +194,27 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedHotelAPI.Controllers.ReservationController",
+    "Method": "UpdateReservation",
+    "RelativePath": "Reservation/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "reservation",
+        "Type": "DomainModel.Reservation",
         "IsRequired": true
       }
     ],

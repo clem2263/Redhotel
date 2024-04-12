@@ -40,7 +40,7 @@ namespace RedHotelAPI.Controllers
         {
             try
             {
-                var reservation = await context.Reservations.FindAsync(id);
+                var reservation = await context.Reservations.Include(r => r.Hotel).Include(r => r.Room).FirstOrDefaultAsync(r => r.ReservationID == id);
 
                 if (reservation == null)
                 {

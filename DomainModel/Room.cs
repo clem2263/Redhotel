@@ -18,8 +18,6 @@ namespace DomainModel
         [Required]
         public Boolean? HaveBath { get; set; }
 
-        public Hotel? Hotel { get; set; }
-
         public int? HotelID { get; set; }
     }
 }

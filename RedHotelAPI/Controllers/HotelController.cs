@@ -41,7 +41,8 @@ namespace RedHotelAPI.Controllers
         {
             try
             {
-                var hotel = await context.Hotels.FindAsync(id);
+                var hotel = await context.Hotels.Include(h => h.Rooms).FirstOrDefaultAsync(h => h.HotelID == id);
+
                 if (hotel == null)
                 {
                     return NotFound();

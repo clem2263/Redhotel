@@ -29,3 +29,4 @@ C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\D
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\refint\Dal.dll
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\Dal.pdb
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\Dal\obj\Debug\net8.0\ref\Dal.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\Dal\obj\Debug\net8.0\Dal.sourcelink.json

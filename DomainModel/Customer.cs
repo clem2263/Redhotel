@@ -31,5 +31,7 @@ namespace DomainModel
         [Required]
         [StringLength(80)]
         public string? Address { get; set; }
+
+        public ICollection<Reservation>? Reservations { get; set; }
     }
 }

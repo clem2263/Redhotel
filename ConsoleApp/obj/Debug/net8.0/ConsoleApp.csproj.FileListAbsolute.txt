@@ -113,3 +113,4 @@ C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\C
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\ConsoleApp\obj\Debug\net8.0\ConsoleApp.pdb
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\ConsoleApp\obj\Debug\net8.0\ConsoleApp.genruntimeconfig.cache
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Redhotel\ConsoleApp\obj\Debug\net8.0\ref\ConsoleApp.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\ConsoleApp\obj\Debug\net8.0\ConsoleApp.sourcelink.json

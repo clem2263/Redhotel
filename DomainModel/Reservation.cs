@@ -13,8 +13,6 @@ namespace DomainModel
 
         public int? HotelID { get; set; }
 
-        public Customer? Customer { get; set; }
-
         public int? CustomerID { get; set; }
 
         public Room? Room { get; set; }
