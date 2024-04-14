@@ -1,6 +1,7 @@
 using Dal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.OpenApi.Models;
 using Serilog;
 
 namespace RedHotelAPI
@@ -19,6 +20,16 @@ namespace RedHotelAPI
                 options.UseMySQL(builder.Configuration.GetConnectionString("RedHotelDb"))
             );
 
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "RedHotelAPI",
+                    Description = "WebService de chaine d'hotels",
+                    Version = "v1"
+                });
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -36,6 +47,15 @@ namespace RedHotelAPI
 
 
             app.MapControllers();
+
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "RedHotel v1");
+                });
+            }
 
             app.Run();
         }

@@ -3,11 +3,13 @@ using Dal;
 using DomainModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.Swagger.Annotations;
 
 namespace RedHotelAPI.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class CustomerController : Controller
     {
         private readonly RedHotelContext context;
@@ -18,7 +20,7 @@ namespace RedHotelAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        public async Task<IActionResult> GetAll()
         {
             try
             {

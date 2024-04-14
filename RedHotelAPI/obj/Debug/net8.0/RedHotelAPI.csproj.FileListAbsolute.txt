@@ -138,3 +138,15 @@ C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau do
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\obj\Debug\net8.0\RedHotelAPI.pdb
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\obj\Debug\net8.0\RedHotelAPI.genruntimeconfig.cache
 C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\obj\Debug\net8.0\ref\RedHotelAPI.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\bin\Debug\net8.0\System.Web.Http.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\bin\Debug\net8.0\System.Web.Http.WebHost.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\bin\Debug\net8.0\Swashbuckle.Core.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\bin\Debug\net8.0\WebActivatorEx.dll
+C:\Users\cleme\Documents\ETUDES_SCOLAIRES\3eme_annee\.NET\Corrections\Nouveau dossier\Redhotel\RedHotelAPI\obj\Debug\net8.0\RedHotelAPI.MvcApplicationPartsAssemblyInfo.cs
