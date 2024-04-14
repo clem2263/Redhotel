@@ -54,6 +54,29 @@ namespace RedHotelAPI.Controllers
             }
         }
 
+
+        [HttpGet("/hotel/{hotelId}/rooms")]
+        public async Task<IActionResult> GetRoomsByHotel(int hotelId)
+        {
+            try
+            {
+                var hotel = await context.Hotels.Include(h => h.Rooms).FirstOrDefaultAsync(h => h.HotelID == hotelId);
+
+                if (hotel == null)
+                {
+                    return NotFound("Hotel not found");
+                }
+
+                var rooms = hotel.Rooms;
+
+                return Ok(rooms);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateRoom([FromBody] Room room)
         {
