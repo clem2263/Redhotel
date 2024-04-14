@@ -86,11 +86,6 @@ namespace RedHotelAPI.Controllers
                     return BadRequest();
                 }
 
-                if (this.context.Hotels.Find(id) == null)
-                {
-                    return NotFound();
-                }
-
                 if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);

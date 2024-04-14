@@ -9,8 +9,9 @@ namespace DomainModel
         public int? RoomID { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string? Category { get; set; }
+        [StringLength(10)]
+        [ValidRoomCategory]
+        public RoomCategory? Category { get; set; }
 
         [Required]
         public int? BedsNumber { get; set; }
@@ -19,6 +20,23 @@ namespace DomainModel
         public Boolean? HaveBath { get; set; }
 
         public int? HotelID { get; set; }
+
+        public class ValidRoomCategoryAttribute : ValidationAttribute
+        {
+            protected override ValidationResult? IsValid(object value, ValidationContext validationContext)
+            {
+                if (value is string categoryString)
+                {
+                    var category = categoryString.ToUpper();
+                    if (!Enum.IsDefined(typeof(RoomCategory), category))
+                    {
+                        return new ValidationResult("La catégorie fournie est invalide.");
+                    }
+                    return ValidationResult.Success;
+                }
+                return ValidationResult.Success;
+            }
+        }
 
         public override string ToString()
         {
@@ -55,7 +73,7 @@ namespace DomainModel
             if (ReferenceEquals(null, other)) return 1;
             var roomIdComparison = Nullable.Compare(RoomID, other.RoomID);
             if (roomIdComparison != 0) return roomIdComparison;
-            var categoryComparison = string.Compare(Category, other.Category, StringComparison.Ordinal);
+            var categoryComparison = Nullable.Compare(Category, other.Category);
             if (categoryComparison != 0) return categoryComparison;
             var bedsNumberComparison = Nullable.Compare(BedsNumber, other.BedsNumber);
             if (bedsNumberComparison != 0) return bedsNumberComparison;
@@ -63,6 +81,5 @@ namespace DomainModel
             if (haveBathComparison != 0) return haveBathComparison;
             return Nullable.Compare(HotelID, other.HotelID);
         }
-
     }
 }

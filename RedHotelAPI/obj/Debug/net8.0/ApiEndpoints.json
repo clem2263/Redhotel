@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "RedHotelAPI.Controllers.CustomerController",
-    "Method": "GetAllAsync",
+    "Method": "GetAll",
     "RelativePath": "Customer",
     "HttpMethod": "GET",
     "IsController": true,
@@ -261,6 +261,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedHotelAPI.Controllers.RoomController",
+    "Method": "ToUppercase",
+    "RelativePath": "Room",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inputString",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "RedHotelAPI.Controllers.RoomController",

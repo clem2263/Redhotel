@@ -85,16 +85,6 @@ namespace RedHotelAPI.Controllers
                     return BadRequest();
                 }
 
-                if (this.context.Rooms.Find(id) == null)
-                {
-                    return NotFound();
-                }
-
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-
                 context.Entry(room).State = EntityState.Modified;
                 await context.SaveChangesAsync();
 
@@ -127,6 +117,11 @@ namespace RedHotelAPI.Controllers
             {
                 return StatusCode(500, e.Message);
             }
+        }
+
+        public string ToUppercase(string inputString)
+        {
+            return inputString.ToUpper();
         }
     }
 }

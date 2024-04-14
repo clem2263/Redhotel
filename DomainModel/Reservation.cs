@@ -21,6 +21,10 @@ namespace DomainModel
 
         public float? Price { get; set; }
 
+        public DateTime? StartDate { get; set; }
+
+        public DateTime? EndDate { get; set; }
+
         public override string ToString()
         {
             return $"ReservationID: {ReservationID}\n" +
@@ -29,14 +33,16 @@ namespace DomainModel
                    $"CustomerID: {CustomerID}\n" +
                    $"Room: {Room?.ToString()}\n" +
                    $"RoomID: {RoomID}\n" +
-                   $"Price: {Price}";
+                   $"Price: {Price}\n"+
+                   $"StartDate: {StartDate?.ToString()}\n"+
+                   $"EndDate: {EndDate?.ToString()}";
         }
 
         public bool Equals(Reservation? other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return ReservationID == other.ReservationID && Equals(Hotel, other.Hotel) && HotelID == other.HotelID && CustomerID == other.CustomerID && Equals(Room, other.Room) && RoomID == other.RoomID && Nullable.Equals(Price, other.Price);
+            return ReservationID == other.ReservationID && Equals(Hotel, other.Hotel) && HotelID == other.HotelID && CustomerID == other.CustomerID && Equals(Room, other.Room) && RoomID == other.RoomID && Nullable.Equals(Price, other.Price) && Nullable.Equals(StartDate, other.StartDate) && Nullable.Equals(EndDate, other.EndDate);
         }
 
         public override bool Equals(object? obj)
@@ -49,7 +55,17 @@ namespace DomainModel
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(ReservationID, Hotel, HotelID, CustomerID, Room, RoomID, Price);
+            var hashCode = new HashCode();
+            hashCode.Add(ReservationID);
+            hashCode.Add(Hotel);
+            hashCode.Add(HotelID);
+            hashCode.Add(CustomerID);
+            hashCode.Add(Room);
+            hashCode.Add(RoomID);
+            hashCode.Add(Price);
+            hashCode.Add(StartDate);
+            hashCode.Add(EndDate);
+            return hashCode.ToHashCode();
         }
 
         public int CompareTo(Reservation? other)
@@ -64,9 +80,15 @@ namespace DomainModel
             if (hotelIdComparison != 0) return hotelIdComparison;
             var customerIdComparison = Nullable.Compare(CustomerID, other.CustomerID);
             if (customerIdComparison != 0) return customerIdComparison;
+            var roomComparison = Comparer<Room?>.Default.Compare(Room, other.Room);
+            if (roomComparison != 0) return roomComparison;
             var roomIdComparison = Nullable.Compare(RoomID, other.RoomID);
             if (roomIdComparison != 0) return roomIdComparison;
-            return Nullable.Compare(Price, other.Price);
+            var priceComparison = Nullable.Compare(Price, other.Price);
+            if (priceComparison != 0) return priceComparison;
+            var startDateComparison = Nullable.Compare(StartDate, other.StartDate);
+            if (startDateComparison != 0) return startDateComparison;
+            return Nullable.Compare(EndDate, other.EndDate);
         }
     }
 }

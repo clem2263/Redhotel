@@ -64,6 +64,11 @@ namespace RedHotelAPI.Controllers
                     return BadRequest(ModelState);
                 }
 
+                if (HasOverlappingReservation(reservation))
+                {
+                    return BadRequest("This room is already booked for the selected dates. Please choose different dates.");
+                }
+
                 context.Reservations.Add(reservation);
                 await context.SaveChangesAsync();
 
@@ -85,14 +90,14 @@ namespace RedHotelAPI.Controllers
                     return BadRequest();
                 }
 
-                if (this.context.Reservations.Find(id) == null)
-                {
-                    return NotFound();
-                }
-
                 if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
+                }
+
+                if (HasOverlappingReservation(reservation))
+                {
+                    return BadRequest("This room is already booked for the selected dates. Please choose different dates.");
                 }
 
                 context.Entry(reservation).State = EntityState.Modified;
@@ -127,6 +132,18 @@ namespace RedHotelAPI.Controllers
             {
                 return StatusCode(500, e.Message);
             }
+        }
+
+        private bool HasOverlappingReservation(Reservation reservation)
+        {
+            var existingReservations = context.Reservations
+                .Where(r => r.RoomID == reservation.RoomID &&
+                           (r.ReservationID != reservation.ReservationID) &&
+                           ((r.StartDate < reservation.EndDate && r.EndDate > reservation.StartDate) ||
+                            (reservation.StartDate < r.StartDate && reservation.EndDate > r.EndDate)))
+                .Any();
+
+            return existingReservations;
         }
     }
 }
