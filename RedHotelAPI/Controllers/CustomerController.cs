@@ -56,6 +56,25 @@ namespace RedHotelAPI.Controllers
             }
         }
 
+        [HttpGet("{customerId}/reservations")]
+        public async Task<IActionResult> GetReservationsByCustomer(int customerId)
+        {
+            try
+            {
+                var customer = await context.Customers.Include(c => c.Reservations).FirstOrDefaultAsync(c => c.CustomerID == customerId);
+
+                if (customer == null)
+                {
+                    return NotFound("Customer not found");
+                }
+                return Ok(customer.Reservations);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateCustomer([FromBody] Customer customer)
         {
