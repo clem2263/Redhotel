@@ -54,7 +54,7 @@ namespace RedHotelAPI.Controllers
             }
         }
 
-        [HttpGet("/hotel/{hotelId}/reservations")]
+        [HttpGet("byHotel/{hotelId}")]
         public async Task<IActionResult> GetReservationsByHotel(int hotelId)
         {
             try

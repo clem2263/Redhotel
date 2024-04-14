@@ -27,6 +27,22 @@
   },
   {
     "ContainingType": "RedHotelAPI.Controllers.CustomerController",
+    "Method": "GetReservationsByCustomer",
+    "RelativePath": "Customer/{customerId}/reservations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RedHotelAPI.Controllers.CustomerController",
     "Method": "GetCustomerById",
     "RelativePath": "Customer/{id}",
     "HttpMethod": "GET",
@@ -237,6 +253,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "RedHotelAPI.Controllers.ReservationController",
+    "Method": "GetReservationsByHotel",
+    "RelativePath": "Reservation/byHotel/{hotelId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "hotelId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "RedHotelAPI.Controllers.RoomController",
     "Method": "GetAllRooms",
     "RelativePath": "Room",
@@ -261,32 +293,6 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "RedHotelAPI.Controllers.RoomController",
-    "Method": "ToUppercase",
-    "RelativePath": "Room",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "inputString",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
   },
   {
     "ContainingType": "RedHotelAPI.Controllers.RoomController",
@@ -342,23 +348,19 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "RedHotelAPI.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "RedHotelAPI.Controllers.RoomController",
+    "Method": "GetRoomsByHotel",
+    "RelativePath": "Room/byHotel/{hotelId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[RedHotelAPI.WeatherForecast, RedHotelAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "hotelId",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
-    ]
+    ],
+    "ReturnTypes": []
   }
 ]

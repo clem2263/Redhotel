@@ -55,7 +55,7 @@ namespace RedHotelAPI.Controllers
         }
 
 
-        [HttpGet("/hotel/{hotelId}/rooms")]
+        [HttpGet("byHotel/{hotelId}")]
         public async Task<IActionResult> GetRoomsByHotel(int hotelId)
         {
             try
@@ -140,11 +140,6 @@ namespace RedHotelAPI.Controllers
             {
                 return StatusCode(500, e.Message);
             }
-        }
-
-        public string ToUppercase(string inputString)
-        {
-            return inputString.ToUpper();
         }
     }
 }
