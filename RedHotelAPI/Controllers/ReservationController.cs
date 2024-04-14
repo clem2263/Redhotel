@@ -54,6 +54,26 @@ namespace RedHotelAPI.Controllers
             }
         }
 
+        [HttpGet("/hotel/{hotelId}/reservations")]
+        public async Task<IActionResult> GetReservationsByHotel(int hotelId)
+        {
+            try
+            {
+                var reservations = await context.Reservations.Where(r => r.Room != null && r.Room.HotelID == hotelId).ToListAsync();
+
+                if (reservations == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(reservations);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateReservation([FromBody] Reservation reservation)
         {
